@@ -12,6 +12,9 @@ import { pipeline } from 'stream/promises';
 import sanitize from 'sanitize-filename';
 import internal from 'stream';
 
+process.env.GLOBAL_AGENT_HTTP_PROXY = 'http://127.0.0.1:7890';
+import 'global-agent/bootstrap';
+
 export class RequestService {
     private static instance: RequestService;
     private preferredFamily: number | undefined = undefined;
